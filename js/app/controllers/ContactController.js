@@ -13,7 +13,18 @@ function ContactController() {
     this.removeContact = function (index) {
         this.contacts.splice(index, 1);
     }
-}
+
+    this.addContact = function() {
+      if(this.name && this.phone)
+          this.contacts.push({
+          name: this.name,
+          phone: this.phone
+        });
+          this.name = '';
+          this.phone = '';
+        }
+      };
+
 
 angular
     .module('app')
